@@ -31,7 +31,8 @@ qrcode.callback = function(data) {
 
 function iniciarCamara() {
     if(navigator.getUserMedia != undefined) {
-        navigator.getUserMedia({video: true, facingMode: "environment"  , audio: false},
+        //navigator.getUserMedia({video: true, facingMode: "environment"  , audio: false},
+        navigator.getUserMedia({video: { facingMode: { exact: "environment" } }, audio: false}
         function(localMediaStream){
             var video = document.querySelector("video")
             //video.src = window.URL.createObjectURL(localMediaStream)
